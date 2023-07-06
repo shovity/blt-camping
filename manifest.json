@@ -1,0 +1,19 @@
+{
+  "name": "blt-camping",
+  "description": "Blackpink ticketbox camping script",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://ticketbox.vn/*",
+        "https://blackpinkhanoi2023.com/*"
+      ],
+      "run_at": "document_end",
+      "js": [ "content.js" ]
+    }
+  ],
+
+  "permissions": [ "activeTab" ],
+  "manifest_version": 3
+}
