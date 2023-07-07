@@ -42,7 +42,7 @@ const booking = async () => {
 const gogo = async () => {
     console.log('== gogo')
 
-    while (Date.now() < new Date('2023-07-07T06:59:58.000Z')) {
+    while (Date.now() < new Date('2023-07-07T07:59:58.000Z')) {
         await sleep(1000)
         console.log('== waiting to open')
     }
