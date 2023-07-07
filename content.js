@@ -42,21 +42,26 @@ const booking = async () => {
 const gogo = async () => {
     console.log('== gogo')
 
-    while (Date.now() < new Date('2023-07-07T04:59:58.000Z')) {
+    while (Date.now() < new Date('2023-07-07T06:59:58.000Z')) {
         await sleep(1000)
         console.log('== waiting to open')
     }
 
-    for (let i = 0; i < 20; i++) {
-        document.querySelector('.flex.flex-col.justify-start.relative.w-full.items-center.rounded > div').click()
-        await sleep(100)
-    }
+    let count = 0
 
-    location.reload()
+    for (let i = 0; i < 1e9999; i++) {
+        document.querySelectorAll('.flex.flex-col.justify-start.relative.w-full.items-center.rounded > div')[1].click()
+        await sleep(50)
+
+        if (count++ > 30) {
+            count = 0
+            location.reload()
+        }
+    }
 }
 
 if (location.host === 'ticketbox.vn') {
-    booking()
+    // booking()
 }
 
 if (location.host === 'blackpinkhanoi2023.com') {
