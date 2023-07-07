@@ -11,7 +11,7 @@ const sleep = (ms) => {
 const booking = async () => {
     console.log('== booking')
 
-    // Go to ticket booker
+    // Go to ticket detail page
     {
         const buy = document.querySelector('[buttontype="buy-ticket"]') || document.querySelector('[buttontype="buy-ticket-other-show"]')
 
@@ -29,7 +29,8 @@ const booking = async () => {
         }
 
         while (document.querySelector(selector)) {
-            document.querySelector(selector).click()
+            const buttons = document.querySelectorAll(selector)
+            buttons[buttons.length - 1].click()
         }
 
         await sleep(900)
@@ -40,6 +41,11 @@ const booking = async () => {
 
 const gogo = async () => {
     console.log('== gogo')
+
+    while (Date.now() < new Date('2023-07-07T04:59:58.000Z')) {
+        await sleep(1000)
+        console.log('== waiting to open')
+    }
 
     for (let i = 0; i < 20; i++) {
         document.querySelector('.flex.flex-col.justify-start.relative.w-full.items-center.rounded > div').click()
